@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Sentiment Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        textarea { width: 300px; height: 100px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .result { margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🧠 AI Sentiment Analyzer</h2>
+        <form action="/predict" method="post">
+            <textarea name="review" placeholder="Enter your review here..."></textarea><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if prediction %}
+            <div class="result">AI Prediction: <span style="color: blue;">{{ prediction }}</span></div>
+        {% endif %}
+    </div>
+</body>
+</html>
